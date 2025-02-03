@@ -32,7 +32,7 @@ const MyPokemonListStyled = styled.div`
   }
 `;
 
-const MyPokemonList = ({ myPokemonIdList, removeMyPokemonId }) => {
+const Dashboard = ({ myPokemonIdList, removeMyPokemonId }) => {
   const myPokemonList = MOCK_DATA.filter((pokemon) =>
     myPokemonIdList.has(pokemon.id)
   );
@@ -66,4 +66,4 @@ const MyPokemonList = ({ myPokemonIdList, removeMyPokemonId }) => {
   );
 };
 
-export default MyPokemonList;
+export default Dashboard;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import PokemonList from "../componets/PokemonList";
-import MyPokemonList from "../componets/MyPokemonList";
+import PokemonList from "../components/PokemonList";
+import Dashboard from "../components/Dashboard";
 import styled from "styled-components";
 
 const DexStyled = styled.div`
@@ -32,7 +32,7 @@ const Dex = () => {
     <>
       <DexStyled>
         <div>
-          <MyPokemonList
+          <Dashboard
             myPokemonIdList={myPokemonIdList}
             removeMyPokemonId={removeMyPokemonId}
           />
