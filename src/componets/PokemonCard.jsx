@@ -46,7 +46,7 @@ const PokemonCardStyled = styled.div`
   }
 `;
 
-const PokemonCard = ({ pokemon }) => {
+const PokemonCard = ({ pokemon, cardAction }) => {
   const paddedId = (pokemon.id + "").padStart(3, "0");
   return (
     <>
@@ -55,7 +55,13 @@ const PokemonCard = ({ pokemon }) => {
           <img src={pokemon.img_url} alt="포켓몬이미지" />
           <div className="pokemon-name">{pokemon.korean_name}</div>
           <div className="pokemon-num">No. {paddedId}</div>
-          <button>추가</button>
+          <button
+            onClick={() => {
+              cardAction(pokemon.id);
+            }}
+          >
+            추가
+          </button>
         </div>
       </PokemonCardStyled>
     </>

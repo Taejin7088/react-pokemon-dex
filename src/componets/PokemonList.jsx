@@ -4,22 +4,30 @@ import MOCK_DATA from "../data/pokemonList";
 import styled from "styled-components";
 
 const PokemonListStyled = styled.div`
+  margin: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   background-color: #ededed;
+  border-radius: 30px;
   .card-list {
     display: flex;
     flex-wrap: wrap;
     margin: 2rem;
   }
 `;
-const PokemonList = () => {
+const PokemonList = ({ addMyPokemonId }) => {
   return (
     <>
       <PokemonListStyled>
-        PokemonList
-        <div>모든포켓몬을 기준으로한 리스트 띄우기</div>
         <div className="card-list">
           {MOCK_DATA.map((pokemon) => {
-            return <PokemonCard pokemon={pokemon} key={pokemon.id} />;
+            return (
+              <PokemonCard
+                pokemon={pokemon}
+                key={pokemon.id}
+                cardAction={addMyPokemonId}
+              />
+            );
           })}
         </div>
       </PokemonListStyled>

@@ -4,6 +4,10 @@ import MOCK_DATA from "../data/pokemonList";
 import styled from "styled-components";
 
 const MyPokemonListStyled = styled.div`
+  margin: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 30px;
   background-color: #ededed;
   .card-list {
     display: flex;
@@ -20,8 +24,7 @@ const MyPokemonListStyled = styled.div`
 //   id: 2,
 //   description: "이상해씨의 진화형으로, 등에는 꽃봉오리가 있습니다.",
 // },
-const MyPokemonList = () => {
-  const myPokemonIdList = [1, 30, 23, 50, 60];
+const MyPokemonList = ({ myPokemonIdList }) => {
   const myPokemonList = MOCK_DATA.filter((pokemon) =>
     myPokemonIdList.includes(pokemon.id)
   );
