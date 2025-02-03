@@ -46,15 +46,6 @@ const PokemonCardStyled = styled.div`
   }
 `;
 
-// {
-//   img_url:
-//     "httpsng",
-//   korean_name: "파이리",
-//   types: ["불꽃"],
-//   id: 4,
-//   description: "불꽃 타입의 포켓몬으로, 꼬리에 불이 붙어 있습니다.",
-// },
-
 const PokemonCard = ({ pokemon }) => {
   const paddedId = (pokemon.id + "").padStart(3, "0");
   return (
