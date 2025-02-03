@@ -3,30 +3,32 @@ import styled from "styled-components";
 
 const PokemonCardStyled = styled.div`
   .card {
+    background-color: white;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
     margin: 10px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 200px;
     height: 280px;
+    cursor: pointer;
+    transform: 0.3s;
   }
-
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.3);
+  }
   img {
     flex-grow: 2;
   }
-
   .pokemon-name {
     flex-grow: 1;
   }
-
   .pokemon-num {
     flex-grow: 1;
   }
-
   button {
     background-color: red;
     border-radius: 5px;
