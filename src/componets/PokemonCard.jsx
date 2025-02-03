@@ -46,7 +46,7 @@ const PokemonCardStyled = styled.div`
   }
 `;
 
-const PokemonCard = ({ pokemon, cardAction }) => {
+const PokemonCard = ({ pokemon, cardAction, isAdd }) => {
   const paddedId = (pokemon.id + "").padStart(3, "0");
   return (
     <>
@@ -60,7 +60,7 @@ const PokemonCard = ({ pokemon, cardAction }) => {
               cardAction(pokemon.id);
             }}
           >
-            추가
+            {isAdd ? "추가" : "삭제"}
           </button>
         </div>
       </PokemonCardStyled>

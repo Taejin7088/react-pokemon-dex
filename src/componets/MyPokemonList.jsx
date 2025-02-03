@@ -24,9 +24,9 @@ const MyPokemonListStyled = styled.div`
 //   id: 2,
 //   description: "이상해씨의 진화형으로, 등에는 꽃봉오리가 있습니다.",
 // },
-const MyPokemonList = ({ myPokemonIdList }) => {
+const MyPokemonList = ({ myPokemonIdList, removeMyPokemonId }) => {
   const myPokemonList = MOCK_DATA.filter((pokemon) =>
-    myPokemonIdList.includes(pokemon.id)
+    myPokemonIdList.has(pokemon.id)
   );
 
   console.log("myPokemonList", myPokemonList);
@@ -35,7 +35,14 @@ const MyPokemonList = ({ myPokemonIdList }) => {
       <MyPokemonListStyled>
         <div className="card-list">
           {myPokemonList.map((pokemon) => {
-            return <PokemonCard pokemon={pokemon} key={pokemon.id} />;
+            return (
+              <PokemonCard
+                pokemon={pokemon}
+                key={pokemon.id}
+                cardAction={removeMyPokemonId}
+                isAdd={false}
+              />
+            );
           })}
         </div>
       </MyPokemonListStyled>

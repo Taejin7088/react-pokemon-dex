@@ -26,6 +26,7 @@ const PokemonList = ({ addMyPokemonId }) => {
                 pokemon={pokemon}
                 key={pokemon.id}
                 cardAction={addMyPokemonId}
+                isAdd={true}
               />
             );
           })}
