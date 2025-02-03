@@ -14,22 +14,31 @@ const MyPokemonListStyled = styled.div`
     flex-wrap: wrap;
     margin: 2rem;
   }
+  .pokeball {
+    background-color: white;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    margin: 10px;
+    width: 200px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .pokeball img {
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+  }
 `;
 
-// {
-//   img_url:
-//     "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
-//   korean_name: "이상해풀",
-//   types: ["풀", "독"],
-//   id: 2,
-//   description: "이상해씨의 진화형으로, 등에는 꽃봉오리가 있습니다.",
-// },
 const MyPokemonList = ({ myPokemonIdList, removeMyPokemonId }) => {
   const myPokemonList = MOCK_DATA.filter((pokemon) =>
     myPokemonIdList.has(pokemon.id)
   );
 
-  console.log("myPokemonList", myPokemonList);
+  let pokeballCounts = [...Array(6 - myPokemonList.length).keys()];
+  //til작성 키값때문에 안됨/ 그래서 이렇게 하나 만듦
   return (
     <>
       <MyPokemonListStyled>
@@ -42,6 +51,13 @@ const MyPokemonList = ({ myPokemonIdList, removeMyPokemonId }) => {
                 cardAction={removeMyPokemonId}
                 isAdd={false}
               />
+            );
+          })}
+          {pokeballCounts.map((i) => {
+            return (
+              <div className="pokeball" key={i}>
+                <img src="../../public/images/pokeball.png" alt="" />
+              </div>
             );
           })}
         </div>

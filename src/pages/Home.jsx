@@ -37,7 +37,7 @@ const Home = () => {
     <>
       <HomeStyled>
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREVMZdfAnSkYIc_0hIzuFUVWhGP-tOwjjSxw&s"
+          src="../../public/images/pockmonLogo.png"
           alt="포켓몬 로고이미지"
         />
         <button
