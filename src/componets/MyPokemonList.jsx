@@ -1,5 +1,5 @@
 import React from "react";
-import PokemonItem from "./PokemonItem";
+import PokemonCard from "./PokemonCard";
 
 const MyPokemonList = () => {
   <>
@@ -9,7 +9,7 @@ const MyPokemonList = () => {
       map으로 선택체크되어있는 포켓몬 item띄우기 최대 6개만 가능하게 해야함
       <br />
       마이 포켓몬 리스트를 따로 만들어서 관리 길이는 최대 6으로
-      <PokemonItem />
+      <PokemonCard />
     </div>
   </>;
 };
