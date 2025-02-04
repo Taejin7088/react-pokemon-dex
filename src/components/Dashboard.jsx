@@ -38,7 +38,7 @@ const Dashboard = ({ myPokemonIdList, removeMyPokemonId }) => {
   );
 
   let pokeballCounts = [...Array(6 - myPokemonList.length).keys()];
-  //til작성 키값때문에 안됨/ 그래서 이렇게 하나 만듦
+
   return (
     <>
       <MyPokemonListStyled>

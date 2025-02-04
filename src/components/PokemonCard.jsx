@@ -25,6 +25,8 @@ const PokemonCardStyled = styled.div`
     flex-grow: 2;
   }
   .pokemon-name {
+    font-weight: 700;
+    font-size: 17px;
     flex-grow: 1;
   }
   .pokemon-num {
@@ -46,16 +48,6 @@ const PokemonCardStyled = styled.div`
     background-color: #793434;
   }
 `;
-
-// {
-//   "img_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png",
-//   "korean_name": "뮤츠",
-//   "types": [
-//       "에스퍼"
-//   ],
-//   "id": 150,
-//   "description": "에스퍼 타입의 전설의 포켓몬으로, 강력한 초능력을 가집니다."
-// }
 
 const PokemonCard = ({ pokemon, cardAction, isAdd }) => {
   const navigate = useNavigate();

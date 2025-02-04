@@ -15,6 +15,7 @@ const PokemonListStyled = styled.div`
     margin: 2rem;
   }
 `;
+
 const PokemonList = ({ addMyPokemonId }) => {
   return (
     <>
