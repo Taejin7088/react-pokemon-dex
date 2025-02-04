@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 
 const DetailStyled = styled.div`
@@ -27,7 +27,6 @@ const DetailStyled = styled.div`
   .pokemon-info-text {
     font-size: 20px;
   }
-
   button {
     height: 40px;
     width: 100px;
@@ -45,6 +44,8 @@ const Detail = () => {
   const pokemonImg_url = queryParams.get("img_url");
   const pokemonTypes = queryParams.get("types");
   const pokemonDescription = queryParams.get("description");
+
+  const navigate = useNavigate();
   return (
     <>
       <DetailStyled>
@@ -55,7 +56,13 @@ const Detail = () => {
           <div className="pokemon-name">{pokemonName}</div>
           <div className="pokemon-info-text"> 타입 : {pokemonTypes}</div>
           <div className="pokemon-info-text">{pokemonDescription}</div>
-          <button>뒤로가기</button>
+          <button
+            onClick={() => {
+              navigate("/dex");
+            }}
+          >
+            뒤로가기
+          </button>
         </div>
       </DetailStyled>
     </>

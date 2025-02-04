@@ -70,7 +70,6 @@ const PokemonCard = ({ pokemon, cardAction, isAdd }) => {
             if (e.target.className === "card-action-btn") {
               return;
             }
-            alert("디테일페이지");
             navigate(detailPageQueryString);
           }}
         >
