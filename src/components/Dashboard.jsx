@@ -46,7 +46,7 @@ const Dashboard = () => {
   );
 
   //비어있는 카드표시를 위한 배열
-  //myPokemonList의 길이를 뺀 배열을 만들어 (들어있는카드 + 비어있는카드) 개수 6개 유지
+  //myPokemonList의 길이를 뺀 배열을 만들어 '선택포켓몬카드 + 비어있는카드' 개수 6개 유지
   const pokeballCounts = [...Array(6 - myPokemonList.length).keys()];
 
   return (

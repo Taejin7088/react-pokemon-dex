@@ -13,7 +13,7 @@ const Dex = () => {
   return (
     <>
       <DexStyled>
-        {/* context를 이용하여 props전달 */}
+        {/* MyPokemonListIdContextProvider 파일에 사용할 state,state조작함수들정의 */}
         <MyPokemonListIdContextProvider>
           <div>
             {/* 선택한 포켓몬리스트 Card를 표시하는 컴포넌트 */}

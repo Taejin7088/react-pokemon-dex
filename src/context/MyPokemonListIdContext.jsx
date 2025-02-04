@@ -5,6 +5,7 @@ const MyPokemonListIdContext = createContext(null);
 
 const MyPokemonListIdContextProvider = ({ children }) => {
   //선택하는 포켓몬의 ID를 저장하는 Set객체
+  //Set으로 똑같은거 추가되도 저장안됨
   const [myPokemonIdList, setMyPokemonIdList] = useState(new Set());
 
   //PokemonCard에서 추가버튼을 클릭하면 실행
@@ -25,6 +26,7 @@ const MyPokemonListIdContextProvider = ({ children }) => {
     setMyPokemonIdList(tempSet);
   };
 
+  //사용할 Provider 정의해서 리턴
   return (
     <MyPokemonListIdContext.Provider
       value={{
