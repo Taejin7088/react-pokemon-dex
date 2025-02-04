@@ -30,6 +30,7 @@ const HomeStyled = styled.div`
   }
 `;
 
+//Dex페이지로 이동하는 기능만 가진 페이지
 const Home = () => {
   const navigate = useNavigate();
   return (

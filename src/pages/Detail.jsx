@@ -37,9 +37,11 @@ const DetailStyled = styled.div`
   }
 `;
 
+//포켓몬 상세 정보를 표시하기 위한 페이지
 const Detail = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
+  //name(포켓몬이름), no(포멧팅된id값), img_url(포켓몬이미지url), types(포켓몬타입), description(상세정보) 전달
   const pokemonName = queryParams.get("name");
   const pokemonImg_url = queryParams.get("img_url");
   const pokemonTypes = queryParams.get("types");
