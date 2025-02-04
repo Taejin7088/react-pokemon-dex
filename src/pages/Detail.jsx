@@ -1,26 +1,63 @@
 import React from "react";
 import { useLocation, useParams } from "react-router-dom";
+import styled from "styled-components";
+
+const DetailStyled = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vh;
+  height: 100vh;
+  background-color: #fadac1;
+  .pokemon-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+  img {
+    width: 20vh;
+    height: 20vh;
+  }
+  .pokemon-name {
+    color: red;
+    font-size: 40px;
+    font-weight: 900;
+  }
+  .pokemon-info-text {
+    font-size: 20px;
+  }
+
+  button {
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+  }
+`;
 
 const Detail = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  //  name no  img_url types description
   const pokemonName = queryParams.get("name");
   const pokemonImg_url = queryParams.get("img_url");
   const pokemonTypes = queryParams.get("types");
   const pokemonDescription = queryParams.get("description");
-  console.log("pokemonName", pokemonName);
-  console.log("pokemonImg_url", pokemonImg_url);
-  console.log("pokemonTypes", pokemonTypes);
-  console.log("pokemonDescription", pokemonDescription);
   return (
     <>
-      <div>
-        포케몬 정보 디테일 띄우는 페이지임
-        <br />
-        queryString으로 받아온 값으로 pokemonlist.find 해서 해당 값으로 페이지
-        구성
-      </div>
+      <DetailStyled>
+        <div className="pokemon-info">
+          <div>
+            <img src={pokemonImg_url} alt={pokemonName + "이미지"} />
+          </div>
+          <div className="pokemon-name">{pokemonName}</div>
+          <div className="pokemon-info-text"> 타입 : {pokemonTypes}</div>
+          <div className="pokemon-info-text">{pokemonDescription}</div>
+          <button>뒤로가기</button>
+        </div>
+      </DetailStyled>
     </>
   );
 };

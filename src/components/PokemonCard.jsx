@@ -74,7 +74,7 @@ const PokemonCard = ({ pokemon, cardAction, isAdd }) => {
             navigate(detailPageQueryString);
           }}
         >
-          <img src={pokemon.img_url} alt="포켓몬이미지" />
+          <img src={pokemon.img_url} alt={pokemon.korean_name + "이미지"} />
           <div className="pokemon-name">{pokemon.korean_name}</div>
           <div className="pokemon-num">No. {paddedId}</div>
           <button
