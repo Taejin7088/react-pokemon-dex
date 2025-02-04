@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const PokemonCardStyled = styled.div`
@@ -46,16 +47,38 @@ const PokemonCardStyled = styled.div`
   }
 `;
 
+// {
+//   "img_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png",
+//   "korean_name": "뮤츠",
+//   "types": [
+//       "에스퍼"
+//   ],
+//   "id": 150,
+//   "description": "에스퍼 타입의 전설의 포켓몬으로, 강력한 초능력을 가집니다."
+// }
+
 const PokemonCard = ({ pokemon, cardAction, isAdd }) => {
+  const navigate = useNavigate();
   const paddedId = (pokemon.id + "").padStart(3, "0");
+  const detailPageQueryString = `/detail?name=${pokemon.korean_name}&no=${paddedId}&img_url=${pokemon.img_url}&types=${pokemon.types}&description=${pokemon.description}`;
   return (
     <>
       <PokemonCardStyled>
-        <div className="card">
+        <div
+          className="card"
+          onClick={(e) => {
+            if (e.target.className === "card-action-btn") {
+              return;
+            }
+            alert("디테일페이지");
+            navigate(detailPageQueryString);
+          }}
+        >
           <img src={pokemon.img_url} alt="포켓몬이미지" />
           <div className="pokemon-name">{pokemon.korean_name}</div>
           <div className="pokemon-num">No. {paddedId}</div>
           <button
+            className="card-action-btn"
             onClick={() => {
               cardAction(pokemon.id);
             }}

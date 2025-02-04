@@ -32,7 +32,6 @@ const HomeStyled = styled.div`
 
 const Home = () => {
   const navigate = useNavigate();
-  console.log(navigate);
   return (
     <>
       <HomeStyled>
@@ -42,7 +41,7 @@ const Home = () => {
         />
         <button
           onClick={() => {
-            navigate("/dev");
+            navigate("/dex");
           }}
         >
           포켓몬 도감 시작하기
