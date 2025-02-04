@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import PokemonCard from "./PokemonCard";
 import MOCK_DATA from "../data/pokemonList";
 import styled from "styled-components";
+import { MyPokemonListIdContext } from "../context/MyPokemonListIdContext";
 
 const PokemonListStyled = styled.div`
   margin: 30px;
@@ -17,7 +18,9 @@ const PokemonListStyled = styled.div`
 `;
 
 //전체 포켓몬 리스트 Card를 출력하는 컴포넌트
-const PokemonList = ({ addMyPokemonId }) => {
+const PokemonList = () => {
+  // context로 전달받은 props 받아오기
+  const { addMyPokemonId } = useContext(MyPokemonListIdContext);
   return (
     <>
       <PokemonListStyled>
