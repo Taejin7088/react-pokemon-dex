@@ -49,7 +49,6 @@ const PokemonCardStyled = styled.div`
     flex-grow: 1;
   }
 `;
-
 //포켓몬 카드 표시를 위한 부분
 const PokemonCard = ({ pokemon }) => {
   const navigate = useNavigate();
