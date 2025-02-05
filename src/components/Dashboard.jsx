@@ -35,7 +35,6 @@ const MyPokemonListStyled = styled.div`
 
 const Dashboard = () => {
   const myPokemonIdList = useSelector((state) => state.myPokemonList);
-  const disPatch = useDispatch();
   console.log("myPokemonIdList", myPokemonIdList);
   //전체 포켓몬 각각의 id와 myPokemonIdList에 id 값을 비교,
   //일치하는 포켓몬배열(myPokemonList) 생성
@@ -55,16 +54,7 @@ const Dashboard = () => {
           {/* cardAction={removeMyPokemonId} => 추가/삭제 기능을 구별하기 위한 요소 */}
           {/* isAdd={false} 카드 버튼에서 추가/삭제 텍스트를 구별하기 위한 요소 */}
           {myPokemonList.map((pokemon) => {
-            return (
-              <PokemonCard
-                pokemon={pokemon}
-                key={pokemon.id}
-                cardAction={() => {
-                  disPatch(removeMyPokemonId(pokemon.id));
-                }}
-                isAdd={false}
-              />
-            );
+            return <PokemonCard pokemon={pokemon} key={pokemon.id} />;
           })}
           {/* 비어있는 카드를 그려내는 부분 */}
           {pokeballCounts.map((i) => {

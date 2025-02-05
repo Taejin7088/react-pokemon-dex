@@ -19,7 +19,6 @@ const PokemonListStyled = styled.div`
 
 //전체 포켓몬 리스트 Card를 출력하는 컴포넌트
 const PokemonList = () => {
-  const disPatch = useDispatch();
   return (
     <>
       <PokemonListStyled>
@@ -28,16 +27,7 @@ const PokemonList = () => {
           {/* cardAction={addMyPokemonId} => 추가/삭제 기능을 구별하기 위한 요소 */}
           {/* isAdd={true} 카드 버튼에서 추가/삭제 텍스트를 구별하기 위한 요소 */}
           {MOCK_DATA.map((pokemon) => {
-            return (
-              <PokemonCard
-                pokemon={pokemon}
-                key={pokemon.id}
-                cardAction={() => {
-                  disPatch(addMyPokemonId(pokemon.id));
-                }}
-                isAdd={true}
-              />
-            );
+            return <PokemonCard pokemon={pokemon} key={pokemon.id} />;
           })}
         </div>
       </PokemonListStyled>
