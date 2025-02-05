@@ -2,7 +2,8 @@ import "./App.css";
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 import Router from "./shared/Router";
-import { MyPokemonListIdContextProvider } from "./context/MyPokemonListIdContext";
+import { Provider } from "react-redux";
+import store from "./redux/config/configStore";
 const GlobalStyled = createGlobalStyle`
   ${reset}
 `;
@@ -10,9 +11,9 @@ function App() {
   return (
     <>
       <GlobalStyled />
-      <MyPokemonListIdContextProvider>
+      <Provider store={store}>
         <Router />
-      </MyPokemonListIdContextProvider>
+      </Provider>
     </>
   );
 }

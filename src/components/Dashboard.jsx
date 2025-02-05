@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
 import PokemonCard from "./PokemonCard";
 import MOCK_DATA from "../data/pokemonList";
 import styled from "styled-components";
-import { MyPokemonListIdContext } from "../context/MyPokemonListIdContext";
+import { useDispatch, useSelector } from "react-redux";
+import { removeMyPokemonId } from "../redux/slices/myPokemonListSlice";
 
 const MyPokemonListStyled = styled.div`
   margin: 30px;
@@ -34,15 +34,13 @@ const MyPokemonListStyled = styled.div`
 `;
 
 const Dashboard = () => {
-  // context로 전달받은 props 받아오기
-  const { myPokemonIdList, removeMyPokemonId } = useContext(
-    MyPokemonListIdContext
-  );
-
+  const myPokemonIdList = useSelector((state) => state.myPokemonList);
+  const disPatch = useDispatch();
+  console.log("myPokemonIdList", myPokemonIdList);
   //전체 포켓몬 각각의 id와 myPokemonIdList에 id 값을 비교,
   //일치하는 포켓몬배열(myPokemonList) 생성
   const myPokemonList = MOCK_DATA.filter((pokemon) =>
-    myPokemonIdList.has(pokemon.id)
+    myPokemonIdList.includes(pokemon.id)
   );
 
   //비어있는 카드표시를 위한 배열
@@ -61,7 +59,9 @@ const Dashboard = () => {
               <PokemonCard
                 pokemon={pokemon}
                 key={pokemon.id}
-                cardAction={removeMyPokemonId}
+                cardAction={() => {
+                  disPatch(removeMyPokemonId(pokemon.id));
+                }}
                 isAdd={false}
               />
             );

@@ -1,8 +1,6 @@
-import React, { useState } from "react";
 import PokemonList from "../components/PokemonList";
 import Dashboard from "../components/Dashboard";
 import styled from "styled-components";
-import { MyPokemonListIdContextProvider } from "../context/MyPokemonListIdContext";
 
 const DexStyled = styled.div`
   background-color: #fadac1;

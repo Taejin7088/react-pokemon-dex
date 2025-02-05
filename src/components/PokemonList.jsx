@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
 import PokemonCard from "./PokemonCard";
 import MOCK_DATA from "../data/pokemonList";
 import styled from "styled-components";
-import { MyPokemonListIdContext } from "../context/MyPokemonListIdContext";
+import { useDispatch } from "react-redux";
+import { addMyPokemonId } from "../redux/slices/myPokemonListSlice";
 
 const PokemonListStyled = styled.div`
   margin: 30px;
@@ -19,8 +19,7 @@ const PokemonListStyled = styled.div`
 
 //전체 포켓몬 리스트 Card를 출력하는 컴포넌트
 const PokemonList = () => {
-  // context로 전달받은 props 받아오기
-  const { addMyPokemonId } = useContext(MyPokemonListIdContext);
+  const disPatch = useDispatch();
   return (
     <>
       <PokemonListStyled>
@@ -33,7 +32,9 @@ const PokemonList = () => {
               <PokemonCard
                 pokemon={pokemon}
                 key={pokemon.id}
-                cardAction={addMyPokemonId}
+                cardAction={() => {
+                  disPatch(addMyPokemonId(pokemon.id));
+                }}
                 isAdd={true}
               />
             );
