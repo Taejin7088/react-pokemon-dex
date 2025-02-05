@@ -38,6 +38,16 @@ const PokemonCardStyled = styled.div`
   .pokemon-num {
     flex-grow: 1;
   }
+  button {
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    height: 30px;
+    width: 60px;
+    margin-bottom: 10px;
+    flex-grow: 1;
+  }
 `;
 
 //포켓몬 카드 표시를 위한 부분
@@ -48,8 +58,8 @@ const PokemonCard = ({ pokemon }) => {
   const paddedId = (pokemon.id + "").padStart(3, "0");
 
   //카드 클릭시 detail페이지에 querySting을 넘겨주기 위한변수
-  //name(포켓몬이름), no(포멧팅된id값), img_url(포켓몬이미지url), types(포켓몬타입), description(상세정보) 전달
-  const detailPageQueryString = `/detail?name=${pokemon.korean_name}&no=${paddedId}&img_url=${pokemon.img_url}&types=${pokemon.types}&description=${pokemon.description}`;
+  //name(포켓몬이름), id(포켓몬id값), img_url(포켓몬이미지url), types(포켓몬타입), description(상세정보) 전달
+  const detailPageQueryString = `/detail?name=${pokemon.korean_name}&id=${pokemon.id}&img_url=${pokemon.img_url}&types=${pokemon.types}&description=${pokemon.description}`;
 
   return (
     <>

@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
+import PokemonCardActionBtn from "../components/PokemonCardActionBtn";
 
 const DetailStyled = styled.div`
   display: flex;
@@ -27,10 +28,16 @@ const DetailStyled = styled.div`
   .pokemon-info-text {
     font-size: 20px;
   }
+
+  .button-area {
+    display: flex;
+    gap: 30px;
+  }
   button {
     height: 40px;
     width: 100px;
     border-radius: 5px;
+    border: solid transparent;
     background-color: black;
     color: white;
     cursor: pointer;
@@ -43,7 +50,8 @@ const Detail = () => {
 
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  //name(포켓몬이름), no(포멧팅된id값), img_url(포켓몬이미지url), types(포켓몬타입), description(상세정보) 전달
+  //name(포켓몬이름), id(포켓몬id값), img_url(포켓몬이미지url), types(포켓몬타입), description(상세정보) 전달
+  const pokemonId = +queryParams.get("id");
   const pokemonName = queryParams.get("name");
   const pokemonImg_url = queryParams.get("img_url");
   const pokemonTypes = queryParams.get("types");
@@ -60,13 +68,16 @@ const Detail = () => {
           <div className="pokemon-name">{pokemonName}</div>
           <div className="pokemon-info-text"> 타입 : {pokemonTypes}</div>
           <div className="pokemon-info-text">{pokemonDescription}</div>
-          <button
-            onClick={() => {
-              navigate("/dex");
-            }}
-          >
-            뒤로가기
-          </button>
+          <div className="button-area">
+            <PokemonCardActionBtn pokemonId={pokemonId} />
+            <button
+              onClick={() => {
+                navigate("/dex");
+              }}
+            >
+              뒤로가기
+            </button>
+          </div>
         </div>
       </DetailStyled>
     </>

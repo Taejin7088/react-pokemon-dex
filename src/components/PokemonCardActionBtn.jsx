@@ -5,18 +5,10 @@ import {
   removeMyPokemonId,
 } from "../redux/slices/myPokemonListSlice";
 import styled from "styled-components";
-const PokemonCardActionBtnStyled = styled.div`
-  button {
-    background-color: red;
-    border-radius: 5px;
-    border: none;
-    color: white;
-    cursor: pointer;
-    height: 30px;
-    width: 60px;
-    margin-bottom: 10px;
-    flex-grow: 1;
-    transition: 0.3s;
+const ButtonColorStyled = styled.div`
+  .card-action-btn {
+    background-color: ${({ $buttonColor }) => $buttonColor};
+    transition: 0.2s;
   }
   button:hover {
     background-color: #793434;
@@ -28,6 +20,7 @@ const PokemonCardActionBtn = ({ pokemonId }) => {
   const myPokemonList = useSelector((state) => state.myPokemonList);
   const buttonAction = {
     text: "추가",
+    buttonColor: "red",
     action: () => {
       disPatch(addMyPokemonId(pokemonId));
     },
@@ -35,15 +28,18 @@ const PokemonCardActionBtn = ({ pokemonId }) => {
 
   if (myPokemonList.includes(pokemonId)) {
     buttonAction.text = "삭제";
+    buttonAction.buttonColor = "#a07474";
     buttonAction.action = () => {
       disPatch(removeMyPokemonId(pokemonId));
     };
   }
 
   return (
-    <PokemonCardActionBtnStyled>
-      <button onClick={buttonAction.action}>{buttonAction.text}</button>
-    </PokemonCardActionBtnStyled>
+    <ButtonColorStyled $buttonColor={buttonAction.buttonColor}>
+      <button className="card-action-btn" onClick={buttonAction.action}>
+        {buttonAction.text}
+      </button>
+    </ButtonColorStyled>
   );
 };
 
