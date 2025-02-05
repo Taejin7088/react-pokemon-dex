@@ -69,6 +69,7 @@ const Detail = () => {
           <div className="pokemon-info-text"> 타입 : {pokemonTypes}</div>
           <div className="pokemon-info-text">{pokemonDescription}</div>
           <div className="button-area">
+            {/* 추가/삭제 버튼을 리턴하는 컴포넌트 */}
             <PokemonCardActionBtn pokemonId={pokemonId} />
             <button
               onClick={() => {

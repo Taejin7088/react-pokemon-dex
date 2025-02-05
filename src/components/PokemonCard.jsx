@@ -76,6 +76,7 @@ const PokemonCard = ({ pokemon }) => {
           <img src={pokemon.img_url} alt={pokemon.korean_name + "이미지"} />
           <div className="pokemon-name">{pokemon.korean_name}</div>
           <div className="pokemon-num">No. {paddedId}</div>
+          {/* 추가/삭제 버튼을 리턴하는 컴포넌트 */}
           <PokemonCardActionBtn pokemonId={pokemon.id} />
         </div>
       </PokemonCardStyled>
