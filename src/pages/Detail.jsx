@@ -1,5 +1,10 @@
 import React from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import {
+  useLocation,
+  useNavigate,
+  useParams,
+  useSearchParams,
+} from "react-router-dom";
 import styled from "styled-components";
 import PokemonCardActionBtn from "../components/PokemonCardActionBtn";
 
@@ -47,15 +52,14 @@ const DetailStyled = styled.div`
 //포켓몬 상세 정보를 표시하기 위한 페이지
 const Detail = () => {
   //디테일페이지로 넘길때 마이포켓몬배열에 해당 아이디가 있으면 false보내서 버튼 안뜨게
+  const [searchParams] = useSearchParams();
 
-  const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
   //name(포켓몬이름), id(포켓몬id값), img_url(포켓몬이미지url), types(포켓몬타입), description(상세정보) 전달
-  const pokemonId = +queryParams.get("id");
-  const pokemonName = queryParams.get("name");
-  const pokemonImg_url = queryParams.get("img_url");
-  const pokemonTypes = queryParams.get("types");
-  const pokemonDescription = queryParams.get("description");
+  const pokemonId = +searchParams.get("id");
+  const pokemonName = searchParams.get("name");
+  const pokemonImg_url = searchParams.get("img_url");
+  const pokemonTypes = searchParams.get("types");
+  const pokemonDescription = searchParams.get("description");
 
   const navigate = useNavigate();
   return (
