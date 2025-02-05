@@ -74,7 +74,6 @@ const PokemonCard = ({ pokemon, cardAction, isAdd }) => {
           <img src={pokemon.img_url} alt={pokemon.korean_name + "이미지"} />
           <div className="pokemon-name">{pokemon.korean_name}</div>
           <div className="pokemon-num">No. {paddedId}</div>
-
           {/* cardAction = 상위컴포넌트에서 전달한 추가/삭제 함수 */}
           {/* isAdd = 상위컴포넌트에서 전달한 추가/삭제 텍스트표시를 위한 props */}
           <button

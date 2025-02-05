@@ -39,6 +39,8 @@ const DetailStyled = styled.div`
 
 //포켓몬 상세 정보를 표시하기 위한 페이지
 const Detail = () => {
+  //디테일페이지로 넘길때 마이포켓몬배열에 해당 아이디가 있으면 false보내서 버튼 안뜨게
+
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   //name(포켓몬이름), no(포멧팅된id값), img_url(포켓몬이미지url), types(포켓몬타입), description(상세정보) 전달
