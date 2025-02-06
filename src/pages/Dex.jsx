@@ -15,6 +15,10 @@ const Dex = () => {
   //PokemonCard에서 추가버튼을 클릭하면 실행
   //myPokemonIdList에 ID를 추가
   const addMyPokemonId = (id) => {
+    if (myPokemonIdList.has(id)) {
+      alert("추가되어 있는 포켓몬 입니다.");
+      return 0;
+    }
     if (myPokemonIdList.size >= 6) {
       alert("포켓몬은 최대 여섯개까지만 선택 할 수 있어요.");
       return 0;
