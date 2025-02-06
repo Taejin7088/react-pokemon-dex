@@ -1,12 +1,7 @@
-import React from "react";
-import {
-  useLocation,
-  useNavigate,
-  useParams,
-  useSearchParams,
-} from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import styled from "styled-components";
 import PokemonCardActionBtn from "../components/PokemonCardActionBtn";
+import { useSelector } from "react-redux";
 
 const DetailStyled = styled.div`
   display: flex;
@@ -53,6 +48,7 @@ const DetailStyled = styled.div`
 const Detail = () => {
   //디테일페이지로 넘길때 마이포켓몬배열에 해당 아이디가 있으면 false보내서 버튼 안뜨게
   const [searchParams] = useSearchParams();
+  const myPokemonList = useSelector((state) => state.myPokemonList);
 
   //name(포켓몬이름), id(포켓몬id값), img_url(포켓몬이미지url), types(포켓몬타입), description(상세정보) 전달
   const pokemonId = +searchParams.get("id");
@@ -60,7 +56,7 @@ const Detail = () => {
   const pokemonImg_url = searchParams.get("img_url");
   const pokemonTypes = searchParams.get("types");
   const pokemonDescription = searchParams.get("description");
-
+  const isRemove = myPokemonList.includes(pokemonId);
   const navigate = useNavigate();
   return (
     <>
@@ -74,7 +70,7 @@ const Detail = () => {
           <div className="pokemon-info-text">{pokemonDescription}</div>
           <div className="button-area">
             {/* 추가/삭제 버튼을 리턴하는 컴포넌트 */}
-            <PokemonCardActionBtn pokemonId={pokemonId} />
+            <PokemonCardActionBtn pokemonId={pokemonId} isRemove={isRemove} />
             <button
               onClick={() => {
                 navigate("/dex");

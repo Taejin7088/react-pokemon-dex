@@ -17,7 +17,7 @@ const ButtonColorStyled = styled.div`
 
 //추가/삭제 버튼을 리턴하는 컴포넌트
 //버튼색상을 제외한 크기 및 디자인은 호출하는 컴포넌트에서 지정 className="card-action-btn"
-const PokemonCardActionBtn = ({ pokemonId }) => {
+const PokemonCardActionBtn = ({ pokemonId, isRemove }) => {
   const disPatch = useDispatch();
   const myPokemonList = useSelector((state) => state.myPokemonList);
 
@@ -31,7 +31,7 @@ const PokemonCardActionBtn = ({ pokemonId }) => {
   };
 
   //myPokemonList에 들어있는 포켓몬이면 '삭제' 버튼으로 동작
-  if (myPokemonList.includes(pokemonId)) {
+  if (isRemove) {
     buttonAction.text = "삭제";
     buttonAction.buttonColor = "#a07474";
     buttonAction.action = () => {

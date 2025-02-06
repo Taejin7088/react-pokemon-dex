@@ -56,7 +56,9 @@ const Dashboard = () => {
         <div className="card-list">
           {/* 전체 포켓몬 리스트에서 각각의 포켓몬 정보를 PokemonCard에 전달*/}
           {myPokemonList.map((pokemon) => {
-            return <PokemonCard pokemon={pokemon} key={pokemon.id} />;
+            return (
+              <PokemonCard pokemon={pokemon} key={pokemon.id} isRemove={true} />
+            );
           })}
           {/* 비어있는 카드를 그려내는 부분 */}
           {pokemonBallCounts.map((i) => {
