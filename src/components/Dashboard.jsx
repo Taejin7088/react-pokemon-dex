@@ -11,7 +11,6 @@ const MyPokemonListStyled = styled.div`
   padding-bottom: 5px;
   border-radius: 30px;
   background-color: #ededed;
-
   .card-list {
     justify-content: space-evenly;
     display: flex;

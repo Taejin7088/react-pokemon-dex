@@ -4,6 +4,8 @@ import styled from "styled-components";
 const HomeStyled = styled.div`
   width: 100vw;
   height: 100vh;
+  background-image: url("../../public/images/pokemondexHome.png");
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;

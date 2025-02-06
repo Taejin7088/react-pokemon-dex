@@ -1,8 +1,6 @@
 import PokemonCard from "./PokemonCard";
 import MOCK_DATA from "../data/pokemonList";
 import styled from "styled-components";
-import { useDispatch } from "react-redux";
-import { addMyPokemonId } from "../redux/slices/myPokemonListSlice";
 
 const PokemonListStyled = styled.div`
   margin: 30px;

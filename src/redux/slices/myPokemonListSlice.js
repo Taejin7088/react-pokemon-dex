@@ -1,5 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
+import {
+  toastAddMyPokemonMessage,
+  toastRemoveMyPokemonMessage,
+} from "../../components/ToastMessage";
 
 const initialState = [];
 
@@ -18,12 +22,14 @@ const myPokemonListSlice = createSlice({
         return state;
       }
       state.push(payload);
-      toast.success("포켓몬 추가 완료");
+      //추가성공메시지를 띄우는 alert창
+      toastAddMyPokemonMessage(state.length);
     },
 
     //PokemonCard에서 삭제버튼을 클릭하면 실행
     removeMyPokemonId: (state, { payload }) => {
-      toast.success("포켓몬 삭제 완료");
+      //삭제성공메시지를 띄우는 alert창
+      toastRemoveMyPokemonMessage(state.length);
       return state.filter((id) => id !== payload);
     },
   },
