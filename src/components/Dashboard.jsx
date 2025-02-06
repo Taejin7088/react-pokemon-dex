@@ -11,28 +11,6 @@ const MyPokemonListStyled = styled.div`
   padding-bottom: 5px;
   border-radius: 30px;
   background-color: #ededed;
-  .card-list {
-    justify-content: space-evenly;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 2rem;
-  }
-  .pokemonBall {
-    background-color: white;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
-    margin: 10px;
-    width: 200px;
-    height: 280px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .pokemonBall img {
-    width: 100px;
-    height: 100px;
-    background-color: transparent;
-  }
 `;
 
 const Dashboard = () => {

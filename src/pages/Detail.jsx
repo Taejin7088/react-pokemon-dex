@@ -2,12 +2,13 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import styled from "styled-components";
 import PokemonCardActionBtn from "../components/PokemonCardActionBtn";
 import { useSelector } from "react-redux";
+import Dashboard from "../components/Dashboard";
 
 const DetailStyled = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vh;
+  width: 100vw;
   height: 100vh;
   background-color: #fadac1;
   .pokemon-info {
@@ -20,7 +21,7 @@ const DetailStyled = styled.div`
     width: 20vh;
     height: 20vh;
   }
-  .pokemon-name {
+  .pokemon-info-name {
     color: red;
     font-size: 40px;
     font-weight: 900;
@@ -28,7 +29,53 @@ const DetailStyled = styled.div`
   .pokemon-info-text {
     font-size: 20px;
   }
-
+  .card-list {
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem;
+  }
+  .card {
+    background-color: white;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 250px;
+    cursor: pointer;
+    transform: 0.3s;
+  }
+  .pokemon-img {
+    width: 50%;
+    height: auto;
+  }
+  .pokemon-name {
+    font-weight: 700;
+    font-size: 17px;
+    color: black;
+  }
+  .pokemon-num {
+  }
+  .pokemonBall {
+    background-color: white;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    margin: 10px;
+    width: 200px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .pokemonBall img {
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+  }
   .button-area {
     display: flex;
     gap: 30px;
@@ -65,7 +112,7 @@ const Detail = () => {
           <div>
             <img src={pokemonImg_url} alt={pokemonName + "이미지"} />
           </div>
-          <div className="pokemon-name">{pokemonName}</div>
+          <div className="pokemon-info-name">{pokemonName}</div>
           <div className="pokemon-info-text"> 타입 : {pokemonTypes}</div>
           <div className="pokemon-info-text">{pokemonDescription}</div>
           <div className="button-area">
@@ -78,6 +125,9 @@ const Detail = () => {
             >
               뒤로가기
             </button>
+          </div>
+          <div className="dashBoard">
+            <Dashboard />
           </div>
         </div>
       </DetailStyled>

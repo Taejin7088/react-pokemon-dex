@@ -9,30 +9,14 @@ import {
 import PokemonCardActionBtn from "./PokemonCardActionBtn";
 
 const PokemonCardStyled = styled.div`
-  .card {
-    background-color: white;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 280px;
-    cursor: pointer;
-    transform: 0.3s;
-  }
   .card:hover {
     transform: translateY(-5px);
     box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.3);
   }
-  img {
+  .pokemon-img {
     flex-grow: 2;
   }
   .pokemon-name {
-    font-weight: 700;
-    font-size: 17px;
     flex-grow: 1;
   }
   .pokemon-num {
@@ -72,7 +56,11 @@ const PokemonCard = ({ pokemon, isRemove }) => {
             navigate(detailPageQueryString);
           }}
         >
-          <img src={pokemon.img_url} alt={pokemon.korean_name + "이미지"} />
+          <img
+            className="pokemon-img"
+            src={pokemon.img_url}
+            alt={pokemon.korean_name + "이미지"}
+          />
           <div className="pokemon-name">{pokemon.korean_name}</div>
           <div className="pokemon-num">No. {paddedId}</div>
           {/* 추가/삭제 버튼을 리턴하는 컴포넌트 */}
