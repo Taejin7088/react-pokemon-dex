@@ -66,7 +66,6 @@ const DetailStyled = styled.div`
   .pokemonBall img {
     width: 100px;
     height: 100px;
-    background-color: transparent;
   }
   .button-area {
     display: flex;

@@ -1,11 +1,5 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import {
-  addMyPokemonId,
-  removeMyPokemonId,
-} from "../redux/slices/myPokemonListSlice";
 import PokemonCardActionBtn from "./PokemonCardActionBtn";
 
 const PokemonCardStyled = styled.div`

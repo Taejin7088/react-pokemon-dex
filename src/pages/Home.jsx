@@ -1,6 +1,6 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+
 const HomeStyled = styled.div`
   width: 100vw;
   height: 100vh;

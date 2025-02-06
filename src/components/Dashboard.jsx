@@ -1,8 +1,7 @@
 import PokemonCard from "./PokemonCard";
 import MOCK_DATA from "../data/pokemonList";
 import styled from "styled-components";
-import { useDispatch, useSelector } from "react-redux";
-import { removeMyPokemonId } from "../redux/slices/myPokemonListSlice";
+import { useSelector } from "react-redux";
 import { useMemo } from "react";
 
 const MyPokemonListStyled = styled.div`
@@ -35,6 +34,7 @@ const Dashboard = () => {
   const MOCK_DATAMap = useMemo(() => {
     return new Map(MOCK_DATA.map((pokemon) => [pokemon.id, pokemon]));
   }, []);
+
   //myPokemonIdList의 ID랑 MOCK_DATAMap key를 비교해서 일치하는 마이포켓몬배열생성
   const myPokemonList = myPokemonIdList.map((id) => {
     return MOCK_DATAMap.get(id);
