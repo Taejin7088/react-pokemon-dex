@@ -38,6 +38,20 @@ const DetailStyled = styled.div`
     font-size: 17px;
     color: black;
   }
+  .card {
+    background-color: white;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 12em;
+    height: 14em;
+    cursor: pointer;
+    transform: 0.3s;
+  }
   .pokemonBall {
     background-color: white;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);

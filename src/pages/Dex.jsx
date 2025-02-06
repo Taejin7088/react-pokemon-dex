@@ -11,8 +11,8 @@ const DexStyled = styled.div`
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
     margin: 10px;
-    width: 12em;
-    height: 14em;
+    width: 16em;
+    height: 16em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,10 +35,14 @@ const DexStyled = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 12em;
-    height: 14em;
+    width: 16em;
+    height: 16em;
     cursor: pointer;
     transform: 0.3s;
+  }
+  button {
+    width: 90px;
+    height: 40px;
   }
 `;
 
