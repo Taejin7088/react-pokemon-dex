@@ -42,7 +42,7 @@ const PokemonCard = ({ pokemon, isRemove }) => {
 
   //카드 클릭시 detail페이지에 querySting을 넘겨주기 위한변수
   //name(포켓몬이름), id(포켓몬id값), img_url(포켓몬이미지url), types(포켓몬타입), description(상세정보) 전달
-  const detailPageQueryString = `/detail?name=${pokemon.korean_name}&id=${pokemon.id}&img_url=${pokemon.img_url}&types=${pokemon.types}&description=${pokemon.description}&isRemove=${isRemove}`;
+  const detailPageQueryString = `/detail?name=${pokemon.korean_name}&id=${pokemon.id}&img_url=${pokemon.img_url}&types=${pokemon.types}&description=${pokemon.description}`;
 
   return (
     <>
