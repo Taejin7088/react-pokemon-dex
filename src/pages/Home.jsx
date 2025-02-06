@@ -39,7 +39,7 @@ const Home = () => {
     <>
       <HomeStyled>
         <img
-          src="../../public/images/pockmonLogo.png"
+          src="../../public/images/pokemonLogo.png"
           alt="포켓몬 로고이미지"
         />
         <button
