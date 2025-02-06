@@ -17,13 +17,13 @@ const MyPokemonListStyled = styled.div`
     display: flex;
     flex-wrap: wrap;
     margin: 2rem;
-    @media (max-width: 1400px) {
+    @media (max-width: 1780px) {
       display: grid;
       place-items: center;
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr;
     }
-    @media (max-width: 760px) {
+    @media (max-width: 951px) {
       display: flex;
     }
   }
