@@ -37,6 +37,7 @@ export const toastAddMyPokemonMessage = (myPokemonListLength) => {
     </>
   );
   toast.success(ToastContent);
+  return <></>;
 };
 
 //열려 있는 포켓볼 이미지를 alert창에 띄움
