@@ -5,33 +5,14 @@ import styled from "styled-components";
 const DexStyled = styled.div`
   background-color: #fadac1;
   padding-top: 10px;
-  .card-list {
-    justify-content: space-evenly;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 2rem;
-  }
-  .card {
-    background-color: white;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 280px;
-    cursor: pointer;
-    transform: 0.3s;
-  }
+
   .pokemonBall {
     background-color: white;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
     margin: 10px;
-    width: 200px;
-    height: 280px;
+    width: 12em;
+    height: 14em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,6 +25,20 @@ const DexStyled = styled.div`
     width: 100px;
     height: 100px;
     background-color: transparent;
+  }
+  .card {
+    background-color: white;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 12em;
+    height: 14em;
+    cursor: pointer;
+    transform: 0.3s;
   }
 `;
 

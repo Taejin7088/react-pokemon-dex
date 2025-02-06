@@ -11,6 +11,22 @@ const MyPokemonListStyled = styled.div`
   padding-bottom: 5px;
   border-radius: 30px;
   background-color: #ededed;
+
+  .card-list {
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem;
+    @media (max-width: 1400px) {
+      display: grid;
+      place-items: center;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+    @media (max-width: 760px) {
+      display: flex;
+    }
+  }
 `;
 
 const Dashboard = () => {

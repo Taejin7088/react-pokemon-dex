@@ -29,26 +29,6 @@ const DetailStyled = styled.div`
   .pokemon-info-text {
     font-size: 20px;
   }
-  .card-list {
-    justify-content: space-evenly;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 2rem;
-  }
-  .card {
-    background-color: white;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 250px;
-    cursor: pointer;
-    transform: 0.3s;
-  }
   .pokemon-img {
     width: 50%;
     height: auto;
@@ -58,15 +38,13 @@ const DetailStyled = styled.div`
     font-size: 17px;
     color: black;
   }
-  .pokemon-num {
-  }
   .pokemonBall {
     background-color: white;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
     margin: 10px;
-    width: 200px;
-    height: 250px;
+    width: 12em;
+    height: 14em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,13 +59,17 @@ const DetailStyled = styled.div`
     gap: 30px;
   }
   button {
-    height: 40px;
-    width: 100px;
+    height: 80px;
+    width: 200px;
     border-radius: 5px;
     border: solid transparent;
     background-color: black;
     color: white;
     cursor: pointer;
+  }
+  .card button {
+    height: 40px;
+    width: 100px;
   }
 `;
 
