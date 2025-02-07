@@ -35,6 +35,7 @@ const PokemonCard = ({ pokemon, isRemove }) => {
   const paddedId = (pokemon.id + "").padStart(3, "0");
 
   //카드 클릭시 detail페이지에 querySting을 넘겨주기 위한변수
+  //id값만 넘겨주면 또 id랑 전체리스트 비교해서 찾아야되기때문에 전부 다 넘겨주기
   //name(포켓몬이름), id(포켓몬id값), img_url(포켓몬이미지url), types(포켓몬타입), description(상세정보) 전달
   const detailPageQueryString = `/detail?name=${pokemon.korean_name}&id=${pokemon.id}&img_url=${pokemon.img_url}&types=${pokemon.types}&description=${pokemon.description}`;
 

@@ -4,6 +4,8 @@ import {
   removeMyPokemonId,
 } from "../redux/slices/myPokemonListSlice";
 import styled from "styled-components";
+import { toast } from "react-toastify";
+import ToastMessage from "./ToastMessage";
 const ButtonColorStyled = styled.div`
   .card-action-btn {
     background-color: ${({ $buttonColor }) => $buttonColor};
@@ -25,6 +27,22 @@ const PokemonCardActionBtn = ({ pokemonId, isRemove }) => {
     text: "추가",
     buttonColor: "red",
     action: () => {
+      if (myPokemonList.length === 6) {
+        toast.warning(
+          <ToastMessage type={"FULL"} myPokemonList={myPokemonList} />
+        );
+        return;
+      }
+      if (myPokemonList.includes(pokemonId)) {
+        toast.warning(
+          <ToastMessage type={"INCLUDE"} myPokemonList={myPokemonList} />
+        );
+        return;
+      }
+      //추가성공메시지를 띄우는 alert창
+      toast.success(
+        <ToastMessage type={"ADD"} myPokemonList={myPokemonList} />
+      );
       disPatch(addMyPokemonId(pokemonId));
     },
   };
@@ -40,6 +58,9 @@ const PokemonCardActionBtn = ({ pokemonId, isRemove }) => {
     buttonAction.text = "삭제";
     buttonAction.buttonColor = "#a07474";
     buttonAction.action = () => {
+      toast.success(
+        <ToastMessage type={"REMOVE"} myPokemonList={myPokemonList} />
+      );
       disPatch(removeMyPokemonId(pokemonId));
     };
   }

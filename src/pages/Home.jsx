@@ -5,14 +5,15 @@ const HomeStyled = styled.div`
   width: 100vw;
   height: 100vh;
   background-image: url("../../public/images/pokemondexHome.png");
-  background-size: cover;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: white;
   img {
-    width: 50%;
+    width: 30%;
     height: auto;
   }
   button {
