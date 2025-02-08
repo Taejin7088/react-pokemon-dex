@@ -57,7 +57,7 @@ const Dashboard = () => {
           {pokemonBallCounts.map((i) => {
             return (
               <div className="pokemonBall" key={i}>
-                <img src="../../public/images/pokemonBall.png" alt="" />
+                <img src="/images/pokemon-ball.png" alt="" />
               </div>
             );
           })}

@@ -4,7 +4,7 @@ import styled from "styled-components";
 const HomeStyled = styled.div`
   width: 100vw;
   height: 100vh;
-  background-image: url("../../public/images/pokemondexHome.png");
+  background-image: url("/images/pokemondex-home-background.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   display: flex;
@@ -39,10 +39,7 @@ const Home = () => {
   return (
     <>
       <HomeStyled>
-        <img
-          src="../../public/images/pokemonLogo.png"
-          alt="포켓몬 로고이미지"
-        />
+        <img src="/images/pokemon-logo.png" alt="포켓몬 로고이미지" />
         <button
           onClick={() => {
             navigate("/dex");

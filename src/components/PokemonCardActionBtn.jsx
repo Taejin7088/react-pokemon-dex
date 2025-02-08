@@ -28,12 +28,14 @@ const PokemonCardActionBtn = ({ pokemonId, isRemove }) => {
     buttonColor: "red",
     action: () => {
       if (myPokemonList.length === 6) {
+        //가득차있다는 메시지를 띄우는 alert창
         toast.warning(
           <ToastMessage type={"FULL"} myPokemonList={myPokemonList} />
         );
         return;
       }
       if (myPokemonList.includes(pokemonId)) {
+        //중복선택메시지를 띄우는 alert창
         toast.warning(
           <ToastMessage type={"INCLUDE"} myPokemonList={myPokemonList} />
         );
@@ -53,7 +55,9 @@ const PokemonCardActionBtn = ({ pokemonId, isRemove }) => {
     buttonAction.buttonColor = "gray";
   }
 
-  //isRemove가 true면 삭제표시 및 기능전환
+  //isRemove가 true일때만 삭제버튼으로 변경
+  //dash보드에서 사용되는 버튼은 무조건 삭제버튼
+  //detail페이지에서 마이포켓몬리스트에 있으면 삭제버튼
   if (isRemove) {
     buttonAction.text = "삭제";
     buttonAction.buttonColor = "#a07474";

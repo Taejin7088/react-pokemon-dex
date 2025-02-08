@@ -1,4 +1,3 @@
-import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 const AddRemoveStyled = styled.div`
@@ -21,9 +20,7 @@ const AddRemoveStyled = styled.div`
 const makePokeBallImg = (myPokemonListLength) => {
   const pokeBallImgArr = [...Array(myPokemonListLength).keys()];
   return pokeBallImgArr.map((key) => {
-    return (
-      <img key={key} src="../../public/images/pokemonBall.png" alt="포케몬볼" />
-    );
+    return <img key={key} src="/images/pokemon-ball.png" alt="포케몬볼" />;
   });
 };
 
@@ -37,7 +34,7 @@ const ToastMessage = ({ type, myPokemonList }) => {
           <div>
             <img
               style={{ display: "flex", width: "60px", height: "100px" }}
-              src="../../public/images/happyJiwoo.png"
+              src="/images/happy-jiwoo.png"
               alt="신난지우"
             />
           </div>
@@ -57,7 +54,7 @@ const ToastMessage = ({ type, myPokemonList }) => {
           <div>포켓몬 삭제 완료!</div>
           <div className="img-area">
             {makePokeBallImg(myPokemonList.length - 1)}
-            <img src="../../public/images/openPokeBall.png" alt="포케몬볼" />
+            <img src="/images/open-poke-ball.png" alt="포케몬볼" />
           </div>
         </AddRemoveStyled>
       );
@@ -69,7 +66,7 @@ const ToastMessage = ({ type, myPokemonList }) => {
           <div>
             <img
               style={{ display: "flex", width: "70px", height: "100px" }}
-              src="../../public/images/oak.png"
+              src="/images/oak.png"
               alt="오박사"
             />
           </div>
@@ -91,7 +88,7 @@ const ToastMessage = ({ type, myPokemonList }) => {
           <div>
             <img
               style={{ display: "flex", width: "70px", height: "100px" }}
-              src="../../public/images/oak.png"
+              src="/images/oak.png"
               alt="오박사"
             />
           </div>
