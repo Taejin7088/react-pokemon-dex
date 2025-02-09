@@ -5,6 +5,8 @@ import { useSelector } from "react-redux";
 import { useMemo } from "react";
 
 const MyPokemonListStyled = styled.div`
+  width: 100%;
+  height: 100%;
   margin: 30px;
   padding-top: 5px;
   padding-bottom: 5px;

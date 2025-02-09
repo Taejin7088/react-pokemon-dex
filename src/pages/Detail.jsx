@@ -15,7 +15,7 @@ const DetailStyled = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
+    gap: 30px;
   }
   img {
     width: 20vh;
@@ -117,7 +117,7 @@ const Detail = () => {
               <button>뒤로가기</button>
             </Link>
           </div>
-          <div className="dashBoard">
+          <div className="dash-board">
             <Dashboard />
           </div>
         </div>
