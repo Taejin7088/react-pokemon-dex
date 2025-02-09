@@ -35,7 +35,7 @@ const ToastMessage = ({ type, myPokemonList }) => {
             <img
               style={{ display: "flex", width: "60px", height: "100px" }}
               src="/images/happy-jiwoo.png"
-              alt="신난지우"
+              alt="지우"
             />
           </div>
           <AddRemoveStyled>
