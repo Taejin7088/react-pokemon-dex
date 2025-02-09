@@ -1,12 +1,18 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const HomeStyled = styled.div`
   width: 100vw;
   height: 100vh;
   background-image: url("/images/pokemondex-home-background.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  width: 100%;
+
+  @media (min-width: 1600px) {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  /* */
+  /*  */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,7 +25,6 @@ const HomeStyled = styled.div`
   button {
     margin: 50px;
     background-color: red;
-    width: 20%;
     height: 50px;
     border: solid 1px transparent;
     border-radius: 10px;
@@ -35,18 +40,13 @@ const HomeStyled = styled.div`
 
 //Dex페이지로 이동하는 기능만 가진 페이지
 const Home = () => {
-  const navigate = useNavigate();
   return (
     <>
       <HomeStyled>
         <img src="/images/pokemon-logo.png" alt="포켓몬 로고이미지" />
-        <button
-          onClick={() => {
-            navigate("/dex");
-          }}
-        >
-          포켓몬 도감 시작하기
-        </button>
+        <Link to={"/dex"}>
+          <button>포켓몬 도감 시작하기</button>
+        </Link>
       </HomeStyled>
     </>
   );

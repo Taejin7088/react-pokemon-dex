@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import PokemonCardActionBtn from "./PokemonCardActionBtn";
 
@@ -26,11 +26,18 @@ const PokemonCardStyled = styled.div`
     margin-bottom: 10px;
     flex-grow: 1;
   }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  a:visited,
+  a:hover,
+  a:active {
+    color: inherit; /* 클릭 전후에도 색상 유지 */
+  }
 `;
 //포켓몬 카드 표시를 위한 부분
 const PokemonCard = ({ pokemon, isRemove }) => {
-  const navigate = useNavigate();
-
   //숫자 "001"의 형식을 저장하는 변수
   const paddedId = (pokemon.id + "").padStart(3, "0");
 
@@ -42,25 +49,26 @@ const PokemonCard = ({ pokemon, isRemove }) => {
   return (
     <>
       <PokemonCardStyled>
-        <div
-          className="card"
+        <Link
+          to={detailPageQueryString}
           onClick={(e) => {
-            if (e.target.className === "card-action-btn") {
-              return;
+            if (e.target.classList.contains("card-action-btn")) {
+              e.preventDefault();
             }
-            navigate(detailPageQueryString);
           }}
         >
-          <img
-            className="pokemon-img"
-            src={pokemon.img_url}
-            alt={pokemon.korean_name + "이미지"}
-          />
-          <div className="pokemon-name">{pokemon.korean_name}</div>
-          <div className="pokemon-num">No. {paddedId}</div>
-          {/* 추가/삭제 버튼을 리턴하는 컴포넌트 */}
-          <PokemonCardActionBtn pokemonId={pokemon.id} isRemove={isRemove} />
-        </div>
+          <div className="card">
+            <img
+              className="pokemon-img"
+              src={pokemon.img_url}
+              alt={pokemon.korean_name + "이미지"}
+            />
+            <div className="pokemon-name">{pokemon.korean_name}</div>
+            <div className="pokemon-num">No. {paddedId}</div>
+            {/* 추가/삭제 버튼을 리턴하는 컴포넌트 */}
+            <PokemonCardActionBtn pokemonId={pokemon.id} isRemove={isRemove} />
+          </div>
+        </Link>
       </PokemonCardStyled>
     </>
   );

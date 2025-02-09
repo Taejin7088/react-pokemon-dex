@@ -1,4 +1,4 @@
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import styled from "styled-components";
 import PokemonCardActionBtn from "../components/PokemonCardActionBtn";
 import { useSelector } from "react-redux";
@@ -99,7 +99,7 @@ const Detail = () => {
   const pokemonTypes = searchParams.get("types");
   const pokemonDescription = searchParams.get("description");
   const isRemove = myPokemonList.includes(pokemonId);
-  const navigate = useNavigate();
+
   return (
     <>
       <DetailStyled>
@@ -113,13 +113,9 @@ const Detail = () => {
           <div className="button-area">
             {/* 추가/삭제 버튼을 리턴하는 컴포넌트 */}
             <PokemonCardActionBtn pokemonId={pokemonId} isRemove={isRemove} />
-            <button
-              onClick={() => {
-                navigate("/dex");
-              }}
-            >
-              뒤로가기
-            </button>
+            <Link to="/dex">
+              <button>뒤로가기</button>
+            </Link>
           </div>
           <div className="dashBoard">
             <Dashboard />
