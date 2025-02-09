@@ -44,7 +44,7 @@ const Home = () => {
     <>
       <HomeStyled>
         <img src="/images/pokemon-logo.png" alt="포켓몬 로고이미지" />
-        <Link to={"/dex/index.html"}>
+        <Link to={"/dex"}>
           <button>포켓몬 도감 시작하기</button>
         </Link>
       </HomeStyled>

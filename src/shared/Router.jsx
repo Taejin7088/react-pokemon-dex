@@ -6,7 +6,7 @@ const Router = () => {
   return (
     <Routes>
       <Route path="" element={<Home />} />
-      <Route path="dex/index.html" element={<Dex />} />
+      <Route path="dex" element={<Dex />} />
       <Route path="detail" element={<Detail />} />
     </Routes>
   );
