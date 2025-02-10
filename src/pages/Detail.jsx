@@ -5,15 +5,19 @@ import { useSelector } from "react-redux";
 import Dashboard from "../components/Dashboard";
 
 const DetailStyled = styled.div`
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
   background-color: #fadac1;
+  .page-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .pokemon-info {
     overflow: auto;
     min-width: 0px;
-    min-height: 100vh;
+    min-height: 50vh;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -88,10 +92,15 @@ const DetailStyled = styled.div`
     height: 40px;
     width: 100px;
   }
+  .dash-board {
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 //포켓몬 상세 정보를 표시하기 위한 페이지
 const Detail = () => {
+  window.scrollTo(0, 0);
   //디테일페이지로 넘길때 마이포켓몬배열에 해당 아이디가 있으면 false보내서 버튼 안뜨게
   const [searchParams] = useSearchParams();
   const myPokemonList = useSelector((state) => state.myPokemonList);
@@ -107,7 +116,7 @@ const Detail = () => {
   return (
     <>
       <DetailStyled>
-        <div>
+        <div className="page-layout">
           <div className="pokemon-info">
             <div>
               <img src={pokemonImg_url} alt={pokemonName + "이미지"} />
@@ -115,12 +124,13 @@ const Detail = () => {
             <div className="pokemon-info-name">{pokemonName}</div>
             <div className="pokemon-info-text"> 타입 : {pokemonTypes}</div>
             <div className="pokemon-info-text">{pokemonDescription}</div>
-            <div className="button-area"></div>
-            {/* 추가/삭제 버튼을 리턴하는 컴포넌트 */}
-            <PokemonCardActionBtn pokemonId={pokemonId} isRemove={isRemove} />
-            <Link to="/dex">
-              <button>뒤로가기</button>
-            </Link>
+            <div className="button-area">
+              {/* 추가/삭제 버튼을 리턴하는 컴포넌트 */}
+              <PokemonCardActionBtn pokemonId={pokemonId} isRemove={isRemove} />
+              <Link to="/dex">
+                <button>뒤로가기</button>
+              </Link>
+            </div>
           </div>
           <div className="dash-board">
             <Dashboard />
