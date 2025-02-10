@@ -5,7 +5,6 @@ import styled from "styled-components";
 const DexStyled = styled.div`
   background-color: #fadac1;
   padding-top: 10px;
-
   .pokemonBall {
     background-color: white;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);

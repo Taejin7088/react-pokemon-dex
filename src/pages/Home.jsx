@@ -2,17 +2,13 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const HomeStyled = styled.div`
-  width: 100vw;
   height: 100vh;
   background-image: url("/images/pokemondex-home-background.png");
   width: 100%;
-
   @media (min-width: 1600px) {
     background-size: 100% 100%;
     background-repeat: no-repeat;
   }
-  /* */
-  /*  */
   display: flex;
   flex-direction: column;
   align-items: center;

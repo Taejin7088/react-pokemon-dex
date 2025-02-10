@@ -14,7 +14,7 @@ const MyPokemonListStyled = styled.div`
     justify-content: space-evenly;
     display: flex;
     flex-wrap: wrap;
-    margin: 2rem;
+    margin: 5px;
     @media (max-width: 1780px) {
       display: grid;
       place-items: center;

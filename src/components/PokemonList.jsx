@@ -4,8 +4,6 @@ import styled from "styled-components";
 
 const PokemonListStyled = styled.div`
   margin: 30px;
-  padding-top: 5px;
-  padding-bottom: 5px;
   background-color: #ededed;
   border-radius: 30px;
   .card-list {

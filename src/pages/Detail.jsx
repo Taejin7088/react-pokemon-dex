@@ -5,19 +5,22 @@ import { useSelector } from "react-redux";
 import Dashboard from "../components/Dashboard";
 
 const DetailStyled = styled.div`
-  width: 100%;
-  min-height: 100vh;
-  background-color: #fadac1;
+  .bg-box {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    min-height: 100%;
+    background-image: url("/images/detail-background.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    filter: brightness(40%);
+  }
   .page-layout {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
   .pokemon-info {
-    overflow: auto;
-    min-width: 0px;
-    min-height: 50vh;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -35,7 +38,9 @@ const DetailStyled = styled.div`
     font-weight: 900;
   }
   .pokemon-info-text {
+    color: #efeded;
     font-size: 20px;
+    font-weight: 500;
   }
   .pokemon-img {
     width: 50%;
@@ -46,41 +51,17 @@ const DetailStyled = styled.div`
     font-size: 17px;
     color: black;
   }
-  .card {
-    background-color: white;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 12em;
-    height: 14em;
-    cursor: pointer;
-    transform: 0.3s;
-  }
-  .pokemonBall {
-    background-color: white;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
-    margin: 10px;
-    width: 12em;
-    height: 14em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+
   .pokemonBall img {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
   }
   .button-area {
     display: flex;
     gap: 30px;
   }
   button {
-    height: 80px;
+    height: 60px;
     width: 200px;
     border-radius: 5px;
     border: solid transparent;
@@ -93,6 +74,32 @@ const DetailStyled = styled.div`
     width: 100px;
   }
   .dash-board {
+    width: 700px;
+    justify-content: center;
+    align-items: center;
+  }
+  .card {
+    background-color: white;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    transform: 0.3s;
+  }
+  .pokemonBall {
+    background-color: white;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    margin: 5px;
+    width: 150px;
+    height: 150px;
+    display: flex;
     justify-content: center;
     align-items: center;
   }
@@ -116,6 +123,7 @@ const Detail = () => {
   return (
     <>
       <DetailStyled>
+        <div className="bg-box"></div>
         <div className="page-layout">
           <div className="pokemon-info">
             <div>
