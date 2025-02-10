@@ -6,15 +6,6 @@ import {
 import styled from "styled-components";
 import { toast } from "react-toastify";
 import ToastMessage from "./ToastMessage";
-const ButtonColorStyled = styled.div`
-  .card-action-btn {
-    background-color: ${({ $buttonColor }) => $buttonColor};
-    transition: 0.2s;
-  }
-  button:hover {
-    background-color: #793434;
-  }
-`;
 
 //추가/삭제 버튼을 리턴하는 컴포넌트
 //버튼색상을 제외한 크기 및 디자인은 호출하는 컴포넌트에서 지정 className="card-action-btn"
@@ -77,5 +68,15 @@ const PokemonCardActionBtn = ({ pokemonId, isRemove }) => {
     </ButtonColorStyled>
   );
 };
+
+const ButtonColorStyled = styled.div`
+  .card-action-btn {
+    background-color: ${({ $buttonColor }) => $buttonColor};
+    transition: 0.2s;
+  }
+  button:hover {
+    background-color: #793434;
+  }
+`;
 
 export default PokemonCardActionBtn;

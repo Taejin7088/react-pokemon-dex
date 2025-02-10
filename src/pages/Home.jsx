@@ -1,6 +1,20 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+//Dex페이지로 이동하는 기능만 가진 페이지
+const Home = () => {
+  return (
+    <>
+      <HomeStyled>
+        <img src="/images/pokemon-logo.png" alt="포켓몬 로고이미지" />
+        <Link to={"/dex"}>
+          <button>포켓몬 도감 시작하기</button>
+        </Link>
+      </HomeStyled>
+    </>
+  );
+};
+
 const HomeStyled = styled.div`
   height: 100vh;
   background-image: url("/images/pokemondex-home-background.png");
@@ -33,19 +47,5 @@ const HomeStyled = styled.div`
     background-color: #793434;
   }
 `;
-
-//Dex페이지로 이동하는 기능만 가진 페이지
-const Home = () => {
-  return (
-    <>
-      <HomeStyled>
-        <img src="/images/pokemon-logo.png" alt="포켓몬 로고이미지" />
-        <Link to={"/dex"}>
-          <button>포켓몬 도감 시작하기</button>
-        </Link>
-      </HomeStyled>
-    </>
-  );
-};
 
 export default Home;

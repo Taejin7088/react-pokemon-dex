@@ -2,40 +2,6 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import PokemonCardActionBtn from "./PokemonCardActionBtn";
 
-const PokemonCardStyled = styled.div`
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.3);
-  }
-  .pokemon-img {
-    flex-grow: 2;
-  }
-  .pokemon-name {
-    flex-grow: 1;
-  }
-  .pokemon-num {
-    flex-grow: 1;
-  }
-  button {
-    border-radius: 5px;
-    border: none;
-    color: white;
-    cursor: pointer;
-    height: 30px;
-    width: 60px;
-    margin-bottom: 10px;
-    flex-grow: 1;
-  }
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  a:visited,
-  a:hover,
-  a:active {
-    color: inherit; /* 클릭 전후에도 색상 유지 */
-  }
-`;
 //포켓몬 카드 표시를 위한 부분
 const PokemonCard = ({ pokemon, isRemove }) => {
   //숫자 "001"의 형식을 저장하는 변수
@@ -73,5 +39,40 @@ const PokemonCard = ({ pokemon, isRemove }) => {
     </>
   );
 };
+
+const PokemonCardStyled = styled.div`
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  .pokemon-img {
+    flex-grow: 2;
+  }
+  .pokemon-name {
+    flex-grow: 1;
+  }
+  .pokemon-num {
+    flex-grow: 1;
+  }
+  button {
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    height: 30px;
+    width: 60px;
+    margin-bottom: 10px;
+    flex-grow: 1;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  a:visited,
+  a:hover,
+  a:active {
+    color: inherit; /* 클릭 전후에도 색상 유지 */
+  }
+`;
 
 export default PokemonCard;

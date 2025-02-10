@@ -2,18 +2,6 @@ import PokemonCard from "./PokemonCard";
 import MOCK_DATA from "../data/pokemonList";
 import styled from "styled-components";
 
-const PokemonListStyled = styled.div`
-  margin: 30px;
-  background-color: #ededed;
-  border-radius: 30px;
-  .card-list {
-    justify-content: space-evenly;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 2rem;
-  }
-`;
-
 //전체 포켓몬 리스트 Card를 출력하는 컴포넌트
 const PokemonList = () => {
   return (
@@ -29,5 +17,17 @@ const PokemonList = () => {
     </>
   );
 };
+
+const PokemonListStyled = styled.div`
+  margin: 30px;
+  background-color: #ededed;
+  border-radius: 30px;
+  .card-list {
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem;
+  }
+`;
 
 export default PokemonList;

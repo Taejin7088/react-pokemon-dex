@@ -4,29 +4,6 @@ import styled from "styled-components";
 import { useSelector } from "react-redux";
 import { useMemo } from "react";
 
-const MyPokemonListStyled = styled.div`
-  margin: 30px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border-radius: 30px;
-  background-color: #ededed;
-  .card-list {
-    justify-content: space-evenly;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 5px;
-    @media (max-width: 1780px) {
-      display: grid;
-      place-items: center;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-    }
-    @media (max-width: 951px) {
-      display: flex;
-    }
-  }
-`;
-
 const Dashboard = () => {
   const myPokemonIdList = useSelector((state) => state.myPokemonList);
 
@@ -66,5 +43,28 @@ const Dashboard = () => {
     </>
   );
 };
+
+const MyPokemonListStyled = styled.div`
+  margin: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 30px;
+  background-color: #ededed;
+  .card-list {
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px;
+    @media (max-width: 1780px) {
+      display: grid;
+      place-items: center;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+    @media (max-width: 951px) {
+      display: flex;
+    }
+  }
+`;
 
 export default Dashboard;
