@@ -12,21 +12,22 @@ const DetailStyled = styled.div`
     min-height: 100%;
     background-image: url("/images/detail-background.png");
     background-size: 100% 100%;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     filter: brightness(40%);
   }
   .page-layout {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
   .pokemon-info {
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 15px;
   }
   img {
     width: 20vh;
@@ -61,7 +62,7 @@ const DetailStyled = styled.div`
     gap: 30px;
   }
   button {
-    height: 60px;
+    height: 50px;
     width: 200px;
     border-radius: 5px;
     border: solid transparent;
