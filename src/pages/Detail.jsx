@@ -5,13 +5,17 @@ import { useSelector } from "react-redux";
 import Dashboard from "../components/Dashboard";
 
 const DetailStyled = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
   background-color: #fadac1;
   .pokemon-info {
+    overflow: auto;
+    min-width: 0px;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -103,14 +107,15 @@ const Detail = () => {
   return (
     <>
       <DetailStyled>
-        <div className="pokemon-info">
-          <div>
-            <img src={pokemonImg_url} alt={pokemonName + "이미지"} />
-          </div>
-          <div className="pokemon-info-name">{pokemonName}</div>
-          <div className="pokemon-info-text"> 타입 : {pokemonTypes}</div>
-          <div className="pokemon-info-text">{pokemonDescription}</div>
-          <div className="button-area">
+        <div>
+          <div className="pokemon-info">
+            <div>
+              <img src={pokemonImg_url} alt={pokemonName + "이미지"} />
+            </div>
+            <div className="pokemon-info-name">{pokemonName}</div>
+            <div className="pokemon-info-text"> 타입 : {pokemonTypes}</div>
+            <div className="pokemon-info-text">{pokemonDescription}</div>
+            <div className="button-area"></div>
             {/* 추가/삭제 버튼을 리턴하는 컴포넌트 */}
             <PokemonCardActionBtn pokemonId={pokemonId} isRemove={isRemove} />
             <Link to="/dex">
